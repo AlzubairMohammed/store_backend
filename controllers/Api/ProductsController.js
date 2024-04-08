@@ -283,7 +283,7 @@ exports.createProducts = async (req, res, next) => {
     const base64Image = matches[2];
     const fileName = Date.now() + "." + fileExtension;
     const filePath = path + fileName;
-    fs.writeFile(`public/${filePath}`, base64Image, "base64", (err) => {
+    fs.writeFile(`/${filePath}`, base64Image, "base64", (err) => {
       if (err) {
         // return res.status(500).json({ message: "Error saving image" });
       }
