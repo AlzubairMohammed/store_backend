@@ -283,7 +283,7 @@ exports.createProducts = async (req, res, next) => {
     const base64Image = matches[2];
     const fileName = Date.now() + "." + fileExtension;
     const filePath = path + fileName;
-    fs.writeFile(`uploads/${filePath}`, base64Image, "base64", (err) => {
+    fs.writeFile(`public/${filePath}`, base64Image, "base64", (err) => {
       if (err) {
         // return res.status(500).json({ message: "Error saving image" });
       }
@@ -403,10 +403,10 @@ exports.paginateByCategoryId = async (req, res, next) => {
       order: [["id", "DESC"]],
       include: [
         "product_images",
-      {
-model : conn.product_variations,
-as : "product_variations"
-      },
+        {
+          model: conn.product_variations,
+          as: "product_variations",
+        },
         {
           model: conn.sub_categories,
           as: "sub_category",
