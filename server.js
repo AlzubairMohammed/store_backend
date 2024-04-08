@@ -39,6 +39,8 @@ app.use(
     },
   })
 );
+const timeoutMillis = 60000; // 60 seconds
+app.use(express.timeout(timeoutMillis));
 app.use(bodyParser.json({ limit: "10000mb" }));
 //app.use(express.static(__dirname + "/public/"));
 // app.use(cookieParser());
