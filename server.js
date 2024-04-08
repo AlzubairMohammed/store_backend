@@ -39,8 +39,6 @@ app.use(
     },
   })
 );
-const timeoutMillis = 60000; // 60 seconds
-app.use(express.timeoutMillis(timeoutMillis));
 app.use(bodyParser.json({ limit: "10000mb" }));
 //app.use(express.static(__dirname + "/public/"));
 // app.use(cookieParser());
@@ -65,4 +63,5 @@ app.use("/api/vendor-payments-details", vendor_payments_details);
 app.use("/api/variation-attributes", variation_attributes);
 
 app.listen(port, () => console.log(`server is running on ,port is  ${port} `));
+app.timeout = 1000;
 module.exports = app;
