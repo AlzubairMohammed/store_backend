@@ -63,5 +63,5 @@ app.use("/api/vendor-payments-details", vendor_payments_details);
 app.use("/api/variation-attributes", variation_attributes);
 
 app.listen(port, () => console.log(`server is running on ,port is  ${port} `));
-app.timeout = 10000;
+
 module.exports = app;
