@@ -1,0 +1,9 @@
+/node_modules
+/temp
+/temp-output
+/public
+/public_old
+compress.js
+.env
+db/conn.js
+uploads/*
